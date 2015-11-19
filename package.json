@@ -4,7 +4,7 @@
 	"author": "小胖子．草兒 Grassboy @plurk.com/xuite.net",
 	"contributors": ["Addon Icon: Icons8 http://icons8.com/"],
 	"title": "grassoby-ajax",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"description": "無視 same origin policy 的 ajax 函數，使用方式為 gAJAX(options, callback)，其中 options 類似 jQuery.ajax(options), 但要把 success callback 當第二個參數，options 參數不支援 options.success，且不支援 then 機制",
 	"main": "index.js",
     "id": "grassboy-ajax@jetpack",
@@ -16,6 +16,36 @@
 		"unsafe-content-script": true,
 		"private-browsing": true
 	},
-	"license": "MIT"
+	"license": "MIT",
+	"preferences": [{
+		"name": "showConfirm",
+		"title": "顯示警告訊息？",
+		"description": "防止網頁在您不知情的狀況下發出 ajax 請求",
+		"type": "radio",
+		"value": "Y",
+		"options": [
+			{
+				"value": "Y",
+				"label": "顯示警告訊息"
+			},
+			{
+				"value": "N",
+				"label": "隱藏警告訊息"
+			}
+		]
+	},
+	{
+		"title": "自動允許清單",
+		"description": "您可設定某些網域(location.host)在不顯示警告訊息的狀況下，存取 gAJAX 函數，您可用逗點隔開多個網域，您也可以在網域中使用萬用字元(*)\r\n\r\n例如：*.grassboy.tw, *.xuite.net",
+		"type": "string",
+		"name": "whiteList",
+		"value": "*.grassboy.tw, localhost*"
+	},{
+		"name": "authToken",
+		"title": "自動允許授權碼 (authToken)",
+		"description": "您可設定一組授權碼，未來當這組授權碼作為第三個參數傳入 gAJAX 函數時，即便目前網域不在上面的自動允許清單中，也可以無條件略過警告訊息。\r\n\r\n例如：當授權碼為 'a1b2c3d4' 時，\r\ngAJAX({url:'http://grassboy.tw'}, function(r){alert(r)}, 'a1b2c3d4') 會在無警告訊息的狀況下發出 ajax 請求\r\n若授權碼為空白，表示不得略過警告訊息",
+		"type": "string",
+		"value": ""
+	}]
 }
 

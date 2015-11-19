@@ -2,7 +2,14 @@ var prefix = 'gAJAX-';
 var data = require("sdk/self").data;
 var pageMod = require("sdk/page-mod");
 var Request = require("sdk/request").Request;
-
+var simplePrefs = require('sdk/simple-prefs');
+var getPrefJSON = function(prefs){
+	return {
+		showConfirm: (prefs.showConfirm === "Y"),
+		whiteList: prefs.whiteList,
+		authToken: prefs.authToken
+	};
+};
 pageMod.PageMod({
 	include: "*",
 	contentScriptFile: data.url("content.js"),
@@ -40,6 +47,6 @@ pageMod.PageMod({
 			    Request(args).get();
             }
 		});
-		worker.port.emit(prefix+"init");
+		worker.port.emit(prefix+"init", getPrefJSON(simplePrefs.prefs));
 	}
 });

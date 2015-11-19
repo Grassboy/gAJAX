@@ -1,0 +1,9 @@
+*.xpi
+*.crx
+*.zip
+.gitignore
+/.git
+/.git/**
+/test
+/test/**
+.jpmignore
