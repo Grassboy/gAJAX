@@ -1,0 +1,21 @@
+{
+	"name": "grassboy-ajax",
+	"license": "MIT License",
+	"author": "小胖子．草兒 Grassboy @plurk.com/xuite.net",
+	"contributors": ["Addon Icon: Icons8 http://icons8.com/"],
+	"title": "grassoby-ajax",
+	"version": "0.0.1",
+	"description": "無視 same origin policy 的 ajax 函數，使用方式為 gAJAX(options, callback)，其中 options 類似 jQuery.ajax(options), 但要把 success callback 當第二個參數，options 參數不支援 options.success，且不支援 then 機制",
+	"main": "index.js",
+    "id": "grassboy-ajax@jetpack",
+	"engines": {
+		"firefox": ">=38.0a1",
+		"fennec": ">=38.0a1"
+	},
+	"permissions": {
+		"unsafe-content-script": true,
+		"private-browsing": true
+	},
+	"license": "MIT"
+}
+
