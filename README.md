@@ -3,6 +3,12 @@ grassboy-ajax
 
 auto generate the cross domain xhr
 
+## Warning
+
+This addon violated so called review policy of AMO.   
+So... Think twice before you install it!!
+
+
 ## Usage:
 
 
