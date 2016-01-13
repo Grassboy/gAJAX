@@ -1,13 +1,13 @@
 {
-	"name": "grassboy-ajax (僅供私人使用，請有需要再安裝)",
+	"name": "grassboy-ajax-private",
 	"license": "MIT License",
 	"author": "小胖子．草兒 Grassboy @plurk.com/xuite.net",
 	"contributors": ["Addon Icon: Icons8 http://icons8.com/"],
-	"title": "grassoby-ajax",
-	"version": "0.0.3",
+	"title": "grassoby-ajax-private",
+	"version": "0.0.4",
 	"description": "(僅供私人使用，請有需要再安裝) 無視 same origin policy 的 ajax 函數，使用方式為 gAJAX(options, callback)，其中 options 類似 jQuery.ajax(options), 但要把 success callback 當第二個參數，options 參數不支援 options.success，且不支援 then 機制",
 	"main": "index.js",
-    "id": "grassboy-ajax@jetpack",
+    "id": "grassboy-ajax-private@jetpack",
 	"engines": {
 		"firefox": ">=38.0a1",
 		"fennec": ">=38.0a1"
